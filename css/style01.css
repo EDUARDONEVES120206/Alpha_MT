@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(255, 254, 254, 0.932);
+    height: 100vh;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+
+h2.titulo{
+    color: black;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span{
+    color: #70009c;
+}
+
+   /* Estilo cabeçalho */
+   .logo img {
+    max-width: 200px; /* Ajuste o valor conforme necessário */
+    width: auto;
+    height: auto;
+}
+
+.frase{
+    color: #70009c;
+}
+
+h1.frase span{
+    color: #9c0000;
+}
+
+
+header{
+    padding: 40px 4%;
+
+}
+
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+header.btn-links{
+    display: inline-block;
+    padding: 0 40px;
+
+}
+
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color .5s;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #9c0000;
+}
+
+.btn-third {
+    background-color: #2e0679;
+    border: 1px solid #2e0679;
+    transition: background-color .5s;
+    text-align: center;
+}
+
+.btn-third3 {
+    background-color: #2e0679;
+    border: 1px solid #2e0679;
+    transition: background-color .5s;
+    text-align: center;
+}
+
+
+.btn-third:hover {
+    background-color: #fff;
+    border: 1px solid #2e0679;
+    color: #2e0679;
+}
+
+/* estilo sobre */
+
+.sobre-itsas .img-sobre-itsas img {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+
+
+section.sobre-itsas {
+    padding: 80px 4%;
+
+
+}
+
+section.sobre-itsas .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre-itsas .txt-sobre-itsas {
+    color: rgb(90, 81, 81);
+    margin-bottom: 30px;
+}
+
+.sobre-itsas .txt-sobre-itsas h2 {
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 30px;
+
+}
+
+.sobre-itsas .txt-sobre-itsas h2 span {
+    color: #AD36C6;
+}
+
+.sobre-itsas .txt-sobre-itsas h3 {
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 15px;
+    color: #AD36C6;
+
+}
+
+
+.sobre-itsas .txt-sobre-itsas p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.sobre-itsas .txt-sobre-itsas p span{
+    color: #AD36C6;
+}
+
+
+.sobre-itsas .txt-sobre-itsas {
+    color: rgb(90, 81, 81);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid none;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.sobre-itsas .txt-sobre-itsas:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px gray;
+}
+
+.sobre-itsas .txt-sobre-itsas ul li{
+    margin: 10px 0;
+    text-align: justify;
+    
+}
+
+.sobre-itsas .txt-sobre-itsas ul li span{
+   color: #AD36C6;
+}
+
+
+.sobre-itsas .txt-sobre-itsas .btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    background-color: #AD36C6;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    text-align: center;
+    align-items: center;
+}
+
+.btn-social button:hover,
+form .btn-enviar input:hover {
+    box-shadow: 0px 0px 8px #AD36C6;
+    transform: scale(1.05);
+}
+
+
+/* estilo integrantes */
+
+section.integrantes{
+    padding: 40px 4%;
+}
+
+section.integrantes .flex{
+    gap: 60px;
+}
+
+.integrantes .integrantes-box{
+    background-color: #70009c;
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid none;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.integrantes .integrantes-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #0000008c;
+}
+
+.integrantes .integrantes-box i{
+    font-size: 70px;
+    color: #9c0000;
+}
+
+.integrantes .integrantes-box h3{
+        font-size: 28px;
+        margin: 15px 0;
+    }
+
+/* Estilos para a classe "copyright" no rodapé */
+footer {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    width: 100%; /* Definindo a largura como 100% */
+    right: 0%;
+}
+
+/* Estilos para a classe "bi" que parece ser usada para os ícones */
+.bi {
+    font-size: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 1020px) {
+
+    /* classes gerais */
+    .flex {
+        flex-direction: column-reverse;
+    }
+
+    /* topo do site */
+    .topo-do-site h1 {
+        font-size: 30px;
+        line-height: 70px;
+    }
+
+    .btn-social {
+        text-align: center;
+    }
+}
+
+
+

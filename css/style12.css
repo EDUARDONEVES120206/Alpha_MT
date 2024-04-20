@@ -1,0 +1,67 @@
+form {
+    color: white;
+    text-align: left;
+}
+
+
+/* Estilo para os rótulos das perguntas */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Estilo para os campos de entrada */
+input[type='datetime-local'],
+input[type='number'],
+input[type='text'],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+/* Estilo para o botão de envio */
+input[type='submit'] {
+    background-color: #870101FF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Estilize o botão de envio quando o mouse passar sobre ele */
+input[type='submit']:hover {
+    background-color: #870101FF;
+}
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color .5s;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #9c0000;
+}

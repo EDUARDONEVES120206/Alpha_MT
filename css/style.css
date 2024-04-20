@@ -1,0 +1,639 @@
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* HOME INDEX.PHP */
+body{
+    background: #000;
+    color: #fff;
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../img/woman.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 10px 5%;
+    position: relative;
+}
+
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.logo{
+    width: 125px;
+    cursor: pointer;
+}
+
+nav button{
+    width: 100px;
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+nav button a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/*VERSÃO MOBILE*/
+@media screen and (max-width: 1040px) {
+    .content {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content::before {
+        width: 100%;
+        height: 40%;
+        top: 0;
+        border-radius: 0;
+    }
+    .first-content, .second-content {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .first-column, .second-column {
+        width: 100%;
+    }
+    
+    .sign-in-js .content::before {
+        top: 60%;
+        left: 0;
+        border-radius: 0;
+
+    }
+
+    .form {
+        width: 90%;
+    }
+    
+    /* ANIMAÇÃO MOBILE CSS*/
+
+    @keyframes deslocamentoEsq {
+
+        from {
+            top: 0;
+            opacity: 1;
+            z-index: 12;
+        }
+    
+        25% {
+            top: -80px;
+            opacity: .5;
+            /* z-index: 12; NÃO HÁ NECESSIDADE */
+        }
+    
+        50% {
+            top: -100px;
+            opacity: .2;
+            /* z-index: 12; NÃO HÁ NECESSIDADE */
+        }
+    
+        to {
+            top: -110px;
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+    
+    
+    @keyframes deslocamentoDir {
+    
+        from {
+            top: 0;
+            z-index: 12;
+        }
+    
+        25% {
+            top: 80px;
+            /* z-index: 12;  NÃO HÁ NECESSIDADE*/
+        }
+    
+        50% {
+            top: 100px;
+            /* z-index: 12; NÃO HÁ NECESSIDADE*/
+            /* background-color: yellow;  Exemplo que dei no vídeo*/
+        }
+    
+        to {
+            top: 110px;
+            z-index: -1;
+        }
+    }
+    
+    
+    
+    @keyframes slidein {
+    
+        from {
+            top: 0;
+            height: 40%;
+        }
+    
+        25% {
+            top: 5%;
+            height: 50%;
+        }
+    
+        50% {
+            top: 25%;
+            height: 60%;
+        }
+    
+        75% {
+            top: 45%;
+            height: 50%;
+        }
+    
+        to {
+            top: 60%;
+            height: 40%;
+        }
+    }
+    
+    @keyframes slideout {
+    
+        from {
+            top: 60%;
+            height: 40%;
+        }
+    
+        25% {
+            top: 45%;
+            height: 50%;
+        }
+    
+        50% {
+            top: 25%;
+            height: 60%;
+        }
+    
+        75% {
+            top: 5%;
+            height: 50%;
+        }
+    
+        to {
+            top: 0;
+            height: 40%;
+        }
+    }
+   
+}
+
+@media screen and (max-width: 740px) {
+    .form {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .form {
+        width: 100%;
+    }
+}
+
+/* css rafa */
+
+
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.frase h1{
+    color: #fff;
+    font-size: 40px;
+}
+
+.frase h1 span {
+    color: #9c0000;
+    font-size: 30px;
+}
+
+h2.titulo {
+    color: #fff;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span {
+    color: #9c0000;
+}
+
+/* Estilo cabeçalho */
+.img-header-site img {
+    max-width: 200px;
+    /* Ajuste o valor conforme necessário */
+    width: auto;
+    height: auto;
+}
+
+.header .img-header-site img {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+
+.frase {
+    color: #fff;
+}
+
+
+h1.frase span {
+    color: #9c0000;
+}
+
+header>.interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+header .topo-do-site{
+    display: flex;
+}
+
+header.btn-links {
+    display: inline-block;
+    padding: 0 40px;
+
+}
+
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color .5s;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #9c0000;
+}
+
+.btn-second {
+    background-color: #9c0000;
+    border: 1px solid #9c0000;
+    transition: background-color .5s;
+    text-align: center;
+}
+
+.btn-second2 {
+    background-color: #9c0000;
+    border: 1px solid #9c0000;
+    transition: background-color .5s;
+    text-align: center;
+}
+
+
+.btn-second2:hover {
+    background-color: #fff;
+    border: 1px solid #9c0000;
+    color: #9c0000;
+}
+
+.btn-third {
+    background-color: #2e0679;
+    border: 1px solid #2e0679;
+    transition: background-color .5s;
+    text-align: center;
+}
+
+.btn-third3 {
+    background-color: #2e0679;
+    border: 1px solid #2e0679;
+    transition: background-color .5s;
+    text-align: center;
+}
+
+
+.btn-third:hover {
+    background-color: #fff;
+    border: 1px solid #2e0679;
+    color: #2e0679;
+}
+
+/* Estilo topo do site */
+
+section.topo-do-site {
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h1 {
+    color: #fff;
+    font-size: 45px;
+    line-height: 70px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+    color: #9c0000;
+    font-size: 50px;
+}
+
+.topo-do-site .txt-topo-site p {
+    color: #fff;
+    margin: 30px 0;
+    font-size: 25px;
+}
+
+.topo-do-site .txt-topo-site p span {
+    color: #9c0000;
+    font-size: 30px;
+}
+
+.topo-do-site .img-topo-site img {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+
+/* Estilo produtos */
+
+section.especialidades {
+    padding: 40px 4%;
+}
+
+section.especialidades .flex {
+    gap: 60px;
+}
+
+.especialidades .produtos-box {
+    color: rgb(90, 81, 81);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid none;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.especialidades .produtos-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ffffff78;
+}
+
+.especialidades .produtos-box i {
+    font-size: 70px;
+    color: #9c0000;
+}
+
+.especialidades .produtos-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* estilo sobre */
+
+section.sobre {
+    padding: 80px 4%;
+
+
+}
+
+section.sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre {
+    color: rgb(90, 81, 81);
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 30px;
+
+}
+
+.sobre .txt-sobre h2 span {
+    color: #9c0000;
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.sobre .txt-sobre {
+    color: rgb(90, 81, 81);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid none;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.sobre .txt-sobre:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ffffff78;
+}
+
+.sobre .txt-sobre .btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    background-color: #9c0000;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.btn-social button:hover,
+form .btn-enviar input:hover {
+    box-shadow: 0px 0px 8px #9c0000;
+    transform: scale(1.05);
+}
+
+/* estilo itsas */
+
+section.itsas {
+    padding: 80px 4%;
+
+
+}
+
+section.itsas .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.itsas .txt-itsas {
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.itsas .txt-itsas h2 {
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 30px;
+
+}
+
+.itsas .txt-itsas h2 span {
+    color: #9c0000;
+}
+
+.itsas .txt-itsas p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.itsas .txt-itsas {
+    color: rgb(90, 81, 81);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid none;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.itsas .txt-itsas:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ffffff78;
+}
+
+/* estilo do formulario de contato */
+
+section.formulario {
+    padding: 80px 4%;
+
+}
+
+/* Estilos para a classe "interface" */
+.interface {
+    max-width: 4500px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* Estilos para a classe "copyright" no rodapé */
+footer {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    width: 100%; /* Definindo a largura como 100% */
+    right: 0%;
+}
+
+
+/* Estilos para a classe "bi" que parece ser usada para os ícones */
+.bi {
+    font-size: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Estilos para a classe "titulo" */
+.titulo {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para a classe "flex" */
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para a classe "txt-topo-site" */
+.txt-topo-site {
+    width: 60%;
+}
+
+/* Estilos para a classe "img-topo-site" */
+.img-topo-site {
+    width: 35%;
+}
+
+@media screen and (max-width: 1020px) {
+
+    /* classes gerais */
+    .flex {
+        flex-direction: column-reverse;
+    }
+
+
+
+
+    /* topo do site */
+    .topo-do-site h1 {
+        font-size: 30px;
+        line-height: 70px;
+    }
+
+    .btn-social {
+        text-align: center;
+    }
+}

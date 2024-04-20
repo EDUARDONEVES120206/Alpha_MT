@@ -1,0 +1,802 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #111111;
+}
+
+
+nav.menu-lateral {
+    width: 80px;
+    height: 100%;
+    background-color: #111111;
+    padding: 20vh 0 40px 1%;
+    box-shadow: 3px 0 0 #910000;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    transition: .5s;
+    z-index: 3;
+}
+
+nav.menu-lateral.expandir {
+    width: 300px;
+}
+
+.btn-expandir {
+    width: 100%;
+    padding-left: 20px;
+}
+
+.btn-expandir>i {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu {
+    transition: .2s;
+}
+
+ul li.ativo {
+    background-color: #910000;
+}
+
+ul li.item-menu:hover {
+    background: #910000;
+}
+
+ul li.item-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link {
+    margin-left: 70px;
+    transition: .5s;
+    opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link {
+    margin-left: 40px;
+    opacity: 1;
+}
+
+ul li.item-menu a .icon>i {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.flex {
+    display: flex;
+}
+
+/* Estilo cabeçalho */
+.logo img {
+    max-width: 150px;
+    /* Ajuste o valor conforme necessário */
+    width: auto;
+    height: auto;
+}
+
+header {
+    padding: 10px 2%;
+    background-color: #111111;
+    position: absolute;
+    top: 0;
+    margin-top: auto;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+}
+
+header>.interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+
+.header-inner-content {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar {
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.navbar>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar ul a {
+    text-decoration: none;
+    /* Remove o sublinhado */
+    color: inherit;
+}
+
+.nav-icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon-container i {
+    width: 80px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.nav-icon-container i:first-child {
+    margin-right: 1rem;
+
+}
+
+.navbar ul li {
+    color: #fff;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+.header-inner-content ul li {
+    display: inline-block;
+    padding: 0 30px;
+}
+
+.navbar ul li:hover {
+    transform: translateY(-5px);
+    transition: all 0.2s;
+    font-weight: bold;
+}
+
+.nav-icon-container i:hover {
+    transform: translateY(-5px);
+    transition: all 0.2s;
+    font-weight: bold;
+}
+
+
+
+/* Estilos para o carrossel e as setas */
+.carousel-container {
+    position: relative;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: opacity 0.5s;
+    /* Adicione uma transição de 0,5 segundos para a opacidade */
+}
+
+.carousel-slide {
+    width: 3000px;
+    /* Nova largura em pixels */
+    height: 800px;
+    /* Nova altura em pixels */
+    display: none;
+}
+
+
+.carousel-slide {
+    flex: 0 0 100%;
+}
+
+.carousel-slide a {
+    text-decoration: none;
+}
+
+.carousel-slide.active {
+    display: block;
+    transform: translateX(0);
+}
+
+.carousel-slide.prev {
+    transform: translateX(-100%);
+}
+
+.carousel-slide.next {
+    transform: translateX(100%);
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+/* Estilo produtos */
+
+.especialidades {
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    height: 100vh;
+    /* Define a altura da seção para ocupar toda a altura da janela */
+}
+
+section.especialidades {
+    padding: 20px 4%;
+}
+
+section.especialidades .flex {
+    gap: 60px;
+}
+
+
+
+.especialidades .produtos-box {
+    color: #fff;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 20px;
+    border-radius: 20px;
+    justify-content: center;
+    border: 2px solid none;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.especialidades .produtos-box h3 {
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.especialidades .produtos-box P {
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+
+.especialidades .produtos-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ffffff78;
+}
+
+.especialidades .produtos-box img {
+    width: 400px;
+    height: auto;
+    color: #9c0000;
+    justify-content: center;
+}
+
+.especialidades .produtos-box h3 {
+    font-size: 35px;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.especialidades .produtos-box p {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+.especialidades .produtos-box p del {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+header.btn-links {
+    display: inline-block;
+    padding: 0 40px;
+
+}
+
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: auto;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color .5s;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #9c0000;
+}
+
+.btn-third {
+    background-color: #9c0000;
+    border: 1px solid #9c0000;
+    transition: background-color .5s;
+    text-align: center;
+}
+
+.btn-third3 {
+    background-color: #9c0000;
+    border: 1px solid #9c0000;
+    transition: background-color .5s;
+    text-align: center;
+}
+
+
+.btn-third:hover {
+    background-color: #fff;
+    border: 1px solid #9c0000;
+    color: #9c0000;
+}
+
+/* banners */
+.banner {
+    /* Estilos para o banner */
+    margin-top: 140px;
+    /* Adicione uma margem superior para separar o banner do cabeçalho */
+    width: auto;
+    /* Largura desejada para o contêiner do banner */
+    height: auto;
+    /* Altura desejada para o contêiner do banner */
+}
+
+.banner img {
+    width: 100%;
+    /* A imagem preencherá todo o contêiner */
+    height: 100%;
+    /* A imagem preencherá todo o contêiner */
+}
+
+
+/* Estilos para a classe "interface" */
+.interface footer {
+    max-width: 4500px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* estilo prod */
+
+.produtos {
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    height: 800px;
+    /* Define a altura da seção para ocupar toda a altura da janela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1500px;
+    /* Defina a largura máxima desejada */
+    margin: 0 auto;
+    /* Centralize o elemento horizontalmente */
+    padding-top: 20px;
+}
+
+
+.interface h2 {
+    text-align: center;
+    color: #910000;
+    font-size: 40px;
+}
+
+.produtos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.produtos .image {
+    flex: 1;
+    text-align: center;
+    display: flex;
+}
+
+.produtos .image img {
+    max-width: 800px;
+    /* Ajuste a largura da imagem conforme necessário */
+    height: auto;
+    margin: 0 auto;
+    /* Centralize a imagem horizontalmente */
+}
+
+.produtos .text {
+    flex: 2;
+    color: #fff;
+    padding: 20px;
+}
+
+.produtos .text h2 {
+    font-size: 50px;
+    line-height: 50px;
+    margin-bottom: 30px;
+}
+
+.produtos .text h2 span {
+    color: rgb(90, 81, 81);
+}
+
+.produtos .text h3 {
+    font-size: 20px;
+    line-height: 35px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.produtos .text p {
+    font-size: 30px;
+    line-height: 20px;
+    margin-bottom: 15px;
+    color: #910000;
+    font-weight: bold;
+}
+
+.produtos .text p del {
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.produtos:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ffffff78;
+}
+
+/* galeria */
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.thumb-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 20px;
+}
+
+.thumb {
+    max-width: 100px;
+    height: auto;
+    margin: 0 0 10px 0;
+    cursor: pointer;
+    margin-left: 150px;
+}
+
+.prev,
+.next {
+    margin: 0 0 10px 0;
+    cursor: pointer;
+}
+
+.full-img {
+    text-align: center;
+    position: flex;
+    width: 1000px;
+    height: 1000px;
+    margin-top: 500px;
+    margin-right: 400px;
+}
+
+.displayed-img {
+    max-width: 1150%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    pointer-events: none;
+    transition: background 0.5s;
+}
+
+/* estilo produtos */
+
+.texto-produto{
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 100px;
+}
+
+.texto-produto h1 {
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo do texto de descrição */
+.texto-produto h3 {
+    font-size: 25px;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+/* Estilo da lista numerada */
+.texto-produto ol {
+    list-style: decimal inside;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos itens da lista numerada */
+.texto-produto li {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Estilo negrito para a parte destacada no item da lista */
+.texto-produto li bold {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Estilo do link */
+.texto-produto a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.2s;
+}
+
+/* Estilo do link em hover */
+.texto-produto a:hover {
+    color: #0056b3;
+}
+
+.img-qualidade img{
+    margin-top: 100px;
+}
+
+select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Estilo quando o usuário passa o mouse sobre o select */
+  select:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Estilo quando o select está focado (quando clicado) */
+  select:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilo das opções (itens da lista suspensa) */
+  option {
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+    position: relative; /* Adiciona posição relativa para posicionar o quadrado de cor */
+    padding-left: 25px; /* Espaço à esquerda para o quadrado de cor */
+  }
+  
+  /* Estilo quando o usuário passa o mouse sobre as opções */
+  option:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Pseudo-classe ::before para adicionar o quadrado de cor */
+  option::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    position: absolute;
+    left: 5px; /* Posição à esquerda do texto da opção */
+    background-color: #fff/* Cor do quadrado */;
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%);
+  }
+  
+  /* Estilo quando o usuário passa o mouse sobre as opções */
+  option:hover::before {
+    background-color: #333;
+  }
+
+label{
+    color: #910000;
+    font-size: 20px;
+    
+}
+
+/* promoçao  */
+
+.promocao-text {
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    padding: 20px;
+    background-color: #111111; /* Cor de fundo */
+  }
+  
+  .promocao-produtos {
+    margin-top: 20px;
+  }
+  
+  .promocao-text .interface {
+    max-width: 1300px;
+    margin: 0 auto; /* Centraliza horizontalmente a interface */
+  }
+  
+  .promocao-text  .titulo {
+    font-size: 40px;
+    color: #910000;
+  }
+  
+  .promocao-produtos-box {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px; /* Largura das caixas de produto */
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff; /* Cor de fundo das caixas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    margin-top: 50px;
+  }
+  
+  .promocao-produtos-box img {
+    max-width: 100%;
+    height: auto; /* Garante que a imagem mantenha a proporção */
+  }
+  
+  .promocao-produtos-box h3 {
+    font-size: 25px;
+    color: #333;
+  }
+  
+  .promocao-produtos-box p {
+    font-size: 20px;
+    color: #111111;
+    margin: 5px 0;
+  }
+
+  .promocao-produtos-box p del{
+    font-size: 16px;
+    color: #910000;
+    margin: 5px 0;
+  }
+  
+  .promocao-produtos-box-combo {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    margin-top: 150px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #333;
+    text-align: center;
+  }
+  
+  .promocao-produtos-box-combo h4 {
+    font-size: 30px;
+    color: #910000;
+    margin: 10px 0;
+  }
+  
+  .promocao-produtos-box-combo p {
+    font-size: 20px;
+    color: #111111;
+    margin: 5px 0;
+  }
+  .promocao-produtos-box-combo p del{
+    font-size: 18px;
+    color: #910000;
+    margin: 5px 0;
+  }
+  
+  .btn {
+    background-color: #910000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #910000;
+  }
+  
+
+
+/* Estilos para a classe "copyright" no rodapé */
+footer {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    /* Definindo a largura como 100% */
+    right: 0%;
+}
+
+/* Estilos para a classe "bi" que parece ser usada para os ícones */
+.bi {
+    font-size: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+}

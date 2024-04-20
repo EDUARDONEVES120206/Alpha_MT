@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #fff
+}
+
+
+nav.menu-lateral {
+    width: 80px;
+    height: 100%;
+    background-color: #111111;
+    padding: 20vh 0 40px 1%;
+    box-shadow: 3px 0 0 #910000;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    transition: .5s;
+    z-index: 3;
+}
+
+nav.menu-lateral.expandir {
+    width: 300px;
+}
+
+.btn-expandir {
+    width: 100%;
+    padding-left: 20px;
+}
+
+.btn-expandir>i {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu {
+    transition: .2s;
+}
+
+ul li.ativo {
+    background-color: #910000;
+}
+
+ul li.item-menu:hover {
+    background: #910000;
+}
+
+ul li.item-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link {
+    margin-left: 70px;
+    transition: .5s;
+    opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link {
+    margin-left: 40px;
+    opacity: 1;
+}
+
+ul li.item-menu a .icon>i {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.id {
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.ie {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    z-index: 2;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+    border: 0px solid #000;
+}
+.ie:hover {
+    border: 1px solid #910000;
+    width: 410px;
+    height: auto;
+    border-radius: 10px;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+}
+
+.tex1 {
+    color: #fff;
+
+    text-align: center;
+
+}
+
+#column {
+    position: absolute;
+    left: 28%;
+    width: 100vh;
+    height: 165%;
+    justify-content: center;
+    text-align: center;
+    background-color: #0e0e0e;
+}
+
+.cronometro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+}
+button {
+    width: 200px;
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    z-index: 4;
+    transition: all 0.5s ease-in-out;
+}
+button:hover {
+    transition: all 0.5s ease-in-out;
+    width: 210px;
+}
+
+button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.timer {
+    font-size: 40px;
+    padding: 20px;
+  }
+.ft {
+    color: #fff;
+    text-decoration: none;
+
+}
+.linel{
+    color: #fff;
+}
+
+.center{
+    color: #fff;
+    text-align: center;  
+}
+
+
+.button1 {
+    width: 200px;
+    border: 0;
+    outline: 0;
+    background: #2600ff;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    z-index: 4;
+    transition: all 0.5s ease-in-out;
+
+}
+
+
+
+
+@media (max-width: 1040px) {
+    #column {
+        width: 85%;
+        height: 100%;
+        left: 15%;
+    }
+
+    .id {
+        width: 445px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .form {
+        width: 60%;
+        overflow-y: auto;
+    }
+
+    .id {
+        width: 445px;
+        height: auto;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .form {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .id {
+        width: 445px;
+        height: auto;
+    }
+}
+   /* box-shadow: 0 0 5px #9e0000, 0 0 10px #9e0000, 0 0 15px #9e0000, 0 0 20px #9e0000, 0 0 25px #9e0000; */

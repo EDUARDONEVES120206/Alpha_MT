@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #111111;
+}
+
+nav.menu-lateral {
+    width: 80px;
+    height: 100%;
+    background-color: #111111;
+    padding: 10vh 0 40px 1%;
+    box-shadow: 3px 0 0 #910000;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    transition: .5s;
+    z-index: 3;
+}
+
+nav.menu-lateral.expandir {
+    width: 300px;
+}
+
+.btn-expandir {
+    width: 100%;
+    padding-left: 20px;
+}
+
+.btn-expandir>i {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu {
+    transition: .2s;
+}
+
+ul li.ativo {
+    background-color: #910000;
+}
+
+ul li.item-menu:hover {
+    background: #910000;
+}
+
+ul li.item-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link {
+    margin-left: 70px;
+    transition: .5s;
+    opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link {
+    margin-left: 40px;
+    opacity: 1;
+}
+
+ul li.item-menu a .icon>i {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.id {
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.ie {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    z-index: 2;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+    border: 0px solid #000;
+}
+.ie:hover {
+    border: 1px solid #910000;
+    width: 410px;
+    height: auto;
+    border-radius: 10px;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+}
+
+
+
+.tex1 {
+    color: #fff;
+
+    text-align: center;
+
+}
+
+#column {
+    position: absolute;
+    left: 28%;
+    width: 100vh;
+    height: 165%;
+    justify-content: center;
+    text-align: center;
+    background-color: #111111;
+}
+
+.cronometro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+}
+button {
+    
+        display: inline-block;
+        width: 150px; /* Defina a largura desejada para os botões */
+        height: 40px; /* Defina a altura desejada para os botões */
+        text-align: center;
+        text-decoration: none;
+        margin: 5px; /* Adicione um espaçamento entre os botões */
+        font-size: 14px;
+        cursor: pointer;
+    
+    width: auto;
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    z-index: 4;
+    transition: all 0.5s ease-in-out;
+}
+button:hover {
+    transition: all 0.5s ease-in-out;
+    background: #b30000;;
+}
+
+button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 200px;
+    height: 40px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+    text-align: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color .5s;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #9c0000;
+}
+
+.btn-third {
+    background-color: #9c0000;
+    border: 1px solid #9c0000;
+    transition: background-color .5s;
+    text-align: center;
+}
+
+.btn-third3 {
+    background-color: #9c0000;
+    border: 1px solid #9c0000;
+    transition: background-color .5s;
+    text-align: center;
+}
+
+
+.btn-third:hover {
+    background-color: #fff;
+    border: 1px solid #9c0000;
+    color: #9c0000;
+}
+
+.timer {
+    font-size: 40px;
+    padding: 20px;
+  }
+.ft {
+    color: #fff;
+    text-decoration: none;
+
+}
+.linel{
+    color: #fff;
+}
+
+.center{
+    color: #fff;
+    text-align: center;  
+}
+
+.texto-produto{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 100px;
+}
+
+.texto-produto h4 {
+    font-size: 35px;
+    color: #fff;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Estilo do texto de descrição */
+.texto-produto h5 {
+    font-size: 25px;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+/* Estilo da lista numerada */
+.texto-produto ol {
+    list-style: decimal inside;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos itens da lista numerada */
+.texto-produto li {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Estilo negrito para a parte destacada no item da lista */
+.texto-produto li bold {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Estilo do link */
+.texto-produto a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.2s;
+}
+
+/* Estilo do link em hover */
+.texto-produto a:hover {
+    color: #0056b3;
+}
+
+/*  */
+
+@media (max-width: 1040px) {
+    #column {
+        width: 85%;
+        height: 100%;
+        left: 15%;
+    }
+
+    .id {
+        width: 445px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .form {
+        width: 60%;
+        overflow-y: auto;
+    }
+
+    .id {
+        width: 445px;
+        height: auto;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .form {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .id {
+        width: 445px;
+        height: auto;
+    }
+}
+   /* box-shadow: 0 0 5px #9e0000, 0 0 10px #9e0000, 0 0 15px #9e0000, 0 0 20px #9e0000, 0 0 25px #9e0000; */
