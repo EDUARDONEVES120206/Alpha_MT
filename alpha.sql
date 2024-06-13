@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Tempo de geração: 08-Nov-2023 às 12:33
--- Versão do servidor: 8.0.27
--- versão do PHP: 8.0.26
+-- Host: 127.0.0.1
+-- Tempo de geração: 13-Jun-2024 às 21:02
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,17 +27,15 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `eventos`
 --
 
-DROP TABLE IF EXISTS `eventos`;
-CREATE TABLE IF NOT EXISTS `eventos` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `eventos` (
+  `id` int(11) NOT NULL,
   `login` varchar(30) NOT NULL,
   `cpf_cnpj` varchar(35) NOT NULL,
   `titulo` varchar(255) NOT NULL,
   `descricao` varchar(300) NOT NULL,
   `data_inicio` datetime NOT NULL,
-  `data_fim` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `data_fim` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `eventos`
@@ -46,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
 INSERT INTO `eventos` (`id`, `login`, `cpf_cnpj`, `titulo`, `descricao`, `data_inicio`, `data_fim`) VALUES
 (15, 'acad', '2354265758356', 'zumba', 'teste2', '2023-10-19 09:23:00', '2023-10-19 09:23:00'),
 (13, 'acad', '2354265758356', 'zumba', 'teste', '2023-10-11 08:50:00', '2023-10-12 08:50:00'),
-(14, 'acad', '2354265758356', 'Teste', 'teste', '2023-10-05 18:01:00', '2023-10-05 18:01:00');
+(16, 'acad', '2354265758356', 'ioga', 'ioga', '2024-06-13 15:58:00', '2024-06-16 15:59:00');
 
 -- --------------------------------------------------------
 
@@ -54,17 +52,14 @@ INSERT INTO `eventos` (`id`, `login`, `cpf_cnpj`, `titulo`, `descricao`, `data_i
 -- Estrutura da tabela `parceria`
 --
 
-DROP TABLE IF EXISTS `parceria`;
-CREATE TABLE IF NOT EXISTS `parceria` (
-  `id_parceria` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `parceria` (
+  `id_parceria` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `nivel` varchar(15) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `telefone` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `motivo` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  PRIMARY KEY (`id_parceria`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `telefone` varchar(50) NOT NULL,
+  `motivo` varchar(300) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `parceria`
@@ -83,8 +78,7 @@ INSERT INTO `parceria` (`id_parceria`, `nome`, `nivel`, `email`, `telefone`, `mo
 -- Estrutura da tabela `tbabdomen`
 --
 
-DROP TABLE IF EXISTS `tbabdomen`;
-CREATE TABLE IF NOT EXISTS `tbabdomen` (
+CREATE TABLE `tbabdomen` (
   `login_usuario` varchar(50) NOT NULL,
   `nome_personal` varchar(50) NOT NULL,
   `telefone_personal` varchar(30) NOT NULL,
@@ -113,9 +107,8 @@ CREATE TABLE IF NOT EXISTS `tbabdomen` (
   `exercicio8` varchar(50) NOT NULL,
   `series8` varchar(10) NOT NULL,
   `repeticoes8` varchar(10) NOT NULL,
-  `observacao` varchar(80) NOT NULL,
-  UNIQUE KEY `login_usuario` (`login_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `observacao` varchar(80) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -123,8 +116,7 @@ CREATE TABLE IF NOT EXISTS `tbabdomen` (
 -- Estrutura da tabela `tbantebraco`
 --
 
-DROP TABLE IF EXISTS `tbantebraco`;
-CREATE TABLE IF NOT EXISTS `tbantebraco` (
+CREATE TABLE `tbantebraco` (
   `login_usuario` varchar(50) NOT NULL,
   `nome_personal` varchar(50) NOT NULL,
   `telefone_personal` varchar(30) NOT NULL,
@@ -153,9 +145,8 @@ CREATE TABLE IF NOT EXISTS `tbantebraco` (
   `exercicio8` varchar(50) NOT NULL,
   `series8` varchar(10) NOT NULL,
   `repeticoes8` varchar(10) NOT NULL,
-  `observacao` varchar(80) NOT NULL,
-  UNIQUE KEY `login_usuario` (`login_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `observacao` varchar(80) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -163,8 +154,7 @@ CREATE TABLE IF NOT EXISTS `tbantebraco` (
 -- Estrutura da tabela `tbbiceps`
 --
 
-DROP TABLE IF EXISTS `tbbiceps`;
-CREATE TABLE IF NOT EXISTS `tbbiceps` (
+CREATE TABLE `tbbiceps` (
   `login_usuario` varchar(50) NOT NULL,
   `nome_personal` varchar(50) NOT NULL,
   `telefone_personal` varchar(30) NOT NULL,
@@ -193,9 +183,8 @@ CREATE TABLE IF NOT EXISTS `tbbiceps` (
   `exercicio8` varchar(50) NOT NULL,
   `series8` varchar(10) NOT NULL,
   `repeticoes8` varchar(10) NOT NULL,
-  `observacao` varchar(80) NOT NULL,
-  UNIQUE KEY `login_usuario` (`login_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `observacao` varchar(80) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -203,12 +192,11 @@ CREATE TABLE IF NOT EXISTS `tbbiceps` (
 -- Estrutura da tabela `tbcardio`
 --
 
-DROP TABLE IF EXISTS `tbcardio`;
-CREATE TABLE IF NOT EXISTS `tbcardio` (
+CREATE TABLE `tbcardio` (
   `login` varchar(50) NOT NULL,
   `data_hora` date NOT NULL,
-  `tempo` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `tempo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbcardio`
@@ -252,7 +240,9 @@ INSERT INTO `tbcardio` (`login`, `data_hora`, `tempo`) VALUES
 ('123', '2023-10-05', 3),
 ('edu', '2023-10-11', 5),
 ('edu', '2023-10-11', 2),
-('edu', '2023-10-11', 11);
+('edu', '2023-10-11', 11),
+('usu1', '2024-06-13', 6),
+('usu1', '2024-06-13', 1);
 
 -- --------------------------------------------------------
 
@@ -260,8 +250,7 @@ INSERT INTO `tbcardio` (`login`, `data_hora`, `tempo`) VALUES
 -- Estrutura da tabela `tbcostas`
 --
 
-DROP TABLE IF EXISTS `tbcostas`;
-CREATE TABLE IF NOT EXISTS `tbcostas` (
+CREATE TABLE `tbcostas` (
   `login_usuario` varchar(50) NOT NULL,
   `nome_personal` varchar(50) NOT NULL,
   `telefone_personal` varchar(30) NOT NULL,
@@ -290,9 +279,8 @@ CREATE TABLE IF NOT EXISTS `tbcostas` (
   `exercicio8` varchar(50) NOT NULL,
   `series8` varchar(10) NOT NULL,
   `repeticoes8` varchar(10) NOT NULL,
-  `observacao` varchar(80) NOT NULL,
-  UNIQUE KEY `login_usuario` (`login_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `observacao` varchar(80) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -300,16 +288,14 @@ CREATE TABLE IF NOT EXISTS `tbcostas` (
 -- Estrutura da tabela `tbequipamento`
 --
 
-DROP TABLE IF EXISTS `tbequipamento`;
-CREATE TABLE IF NOT EXISTS `tbequipamento` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbequipamento` (
+  `id` int(11) NOT NULL,
   `caminho` varchar(255) NOT NULL,
   `cpf_cnpj` varchar(14) NOT NULL,
   `nome_equipamento` varchar(255) NOT NULL,
   `login_academia` varchar(255) NOT NULL,
-  `qnt_equipamento` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `qnt_equipamento` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbequipamento`
@@ -325,17 +311,15 @@ INSERT INTO `tbequipamento` (`id`, `caminho`, `cpf_cnpj`, `nome_equipamento`, `l
 -- Estrutura da tabela `tbficha`
 --
 
-DROP TABLE IF EXISTS `tbficha`;
-CREATE TABLE IF NOT EXISTS `tbficha` (
-  `id_pd` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbficha` (
+  `id_pd` int(11) NOT NULL,
   `nome` varchar(30) NOT NULL,
-  `login` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `login` varchar(30) NOT NULL,
   `nivel` varchar(30) NOT NULL,
-  `plano` int NOT NULL,
+  `plano` int(11) NOT NULL,
   `academia_selecionada` varchar(30) NOT NULL,
-  `data_registro` datetime DEFAULT NULL,
-  PRIMARY KEY (`id_pd`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `data_registro` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbficha`
@@ -348,7 +332,8 @@ INSERT INTO `tbficha` (`id_pd`, `nome`, `login`, `nivel`, `plano`, `academia_sel
 (9, '123', '123', 'usuario', 1, 'teste3', '0000-00-00 00:00:00'),
 (19, 'Trumann1', '123', 'usuario', 3, 'Teste', '2023-10-04 12:20:11'),
 (23, '123', '1234', 'usuario', 3, 'Teste', '2023-10-04 22:44:13'),
-(26, 'Eduardo Neves', 'edu', 'usuario', 3, 'teste1', '2023-10-11 12:16:00');
+(26, 'Eduardo Neves', 'edu', 'usuario', 3, 'teste1', '2023-10-11 12:16:00'),
+(27, 'Usuario 3', 'usu3', 'usuario', 3, 'teste1', '2024-06-13 21:01:19');
 
 -- --------------------------------------------------------
 
@@ -356,17 +341,15 @@ INSERT INTO `tbficha` (`id_pd`, `nome`, `login`, `nivel`, `plano`, `academia_sel
 -- Estrutura da tabela `tbfichaof`
 --
 
-DROP TABLE IF EXISTS `tbfichaof`;
-CREATE TABLE IF NOT EXISTS `tbfichaof` (
-  `id_pd` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbfichaof` (
+  `id_pd` int(11) NOT NULL,
   `nome` varchar(30) NOT NULL,
-  `login2` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `login2` varchar(30) NOT NULL,
   `nivel` varchar(30) NOT NULL,
-  `plano` int NOT NULL,
-  `nome_academia` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `data_hora` datetime DEFAULT NULL,
-  PRIMARY KEY (`id_pd`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `plano` int(11) NOT NULL,
+  `nome_academia` varchar(30) NOT NULL,
+  `data_hora` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbfichaof`
@@ -383,9 +366,8 @@ INSERT INTO `tbfichaof` (`id_pd`, `nome`, `login2`, `nivel`, `plano`, `nome_acad
 -- Estrutura da tabela `tbfuncionario`
 --
 
-DROP TABLE IF EXISTS `tbfuncionario`;
-CREATE TABLE IF NOT EXISTS `tbfuncionario` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbfuncionario` (
+  `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `login` varchar(30) NOT NULL,
   `senha` varchar(30) NOT NULL,
@@ -393,11 +375,9 @@ CREATE TABLE IF NOT EXISTS `tbfuncionario` (
   `numero` char(30) NOT NULL,
   `data_registro` date NOT NULL,
   `palavra_chave` varchar(40) NOT NULL,
-  `nome_academia` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `login_academia` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `login` (`login`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `nome_academia` varchar(100) NOT NULL,
+  `login_academia` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbfuncionario`
@@ -414,12 +394,10 @@ INSERT INTO `tbfuncionario` (`id`, `nome`, `login`, `senha`, `email`, `numero`, 
 -- Estrutura da tabela `tbfundo_acad`
 --
 
-DROP TABLE IF EXISTS `tbfundo_acad`;
-CREATE TABLE IF NOT EXISTS `tbfundo_acad` (
+CREATE TABLE `tbfundo_acad` (
   `login` varchar(50) NOT NULL,
-  `caminho` varchar(900) NOT NULL,
-  UNIQUE KEY `login` (`login`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `caminho` varchar(900) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbfundo_acad`
@@ -435,12 +413,10 @@ INSERT INTO `tbfundo_acad` (`login`, `caminho`) VALUES
 -- Estrutura da tabela `tbimagens_acad`
 --
 
-DROP TABLE IF EXISTS `tbimagens_acad`;
-CREATE TABLE IF NOT EXISTS `tbimagens_acad` (
+CREATE TABLE `tbimagens_acad` (
   `login` varchar(50) NOT NULL,
-  `caminho` varchar(900) NOT NULL,
-  UNIQUE KEY `login` (`login`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `caminho` varchar(900) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -448,12 +424,10 @@ CREATE TABLE IF NOT EXISTS `tbimagens_acad` (
 -- Estrutura da tabela `tbimagens_acad_funcionario`
 --
 
-DROP TABLE IF EXISTS `tbimagens_acad_funcionario`;
-CREATE TABLE IF NOT EXISTS `tbimagens_acad_funcionario` (
+CREATE TABLE `tbimagens_acad_funcionario` (
   `login` varchar(50) NOT NULL,
-  `caminho` varchar(900) NOT NULL,
-  UNIQUE KEY `login` (`login`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `caminho` varchar(900) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbimagens_acad_funcionario`
@@ -468,12 +442,10 @@ INSERT INTO `tbimagens_acad_funcionario` (`login`, `caminho`) VALUES
 -- Estrutura da tabela `tbimagens_usuario`
 --
 
-DROP TABLE IF EXISTS `tbimagens_usuario`;
-CREATE TABLE IF NOT EXISTS `tbimagens_usuario` (
+CREATE TABLE `tbimagens_usuario` (
   `login` varchar(50) NOT NULL,
-  `caminho` varchar(900) NOT NULL,
-  UNIQUE KEY `login` (`login`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `caminho` varchar(900) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbimagens_usuario`
@@ -481,7 +453,8 @@ CREATE TABLE IF NOT EXISTS `tbimagens_usuario` (
 
 INSERT INTO `tbimagens_usuario` (`login`, `caminho`) VALUES
 ('123', '../img/imgs/RTX (5).png'),
-('edu', '../img/imgs/ITSAS.png');
+('edu', '../img/imgs/ITSAS.png'),
+('usu3', '../img/imgs/Screenshot_1.png');
 
 -- --------------------------------------------------------
 
@@ -489,8 +462,7 @@ INSERT INTO `tbimagens_usuario` (`login`, `caminho`) VALUES
 -- Estrutura da tabela `tbombro`
 --
 
-DROP TABLE IF EXISTS `tbombro`;
-CREATE TABLE IF NOT EXISTS `tbombro` (
+CREATE TABLE `tbombro` (
   `login_usuario` varchar(50) NOT NULL,
   `nome_personal` varchar(50) NOT NULL,
   `telefone_personal` varchar(30) NOT NULL,
@@ -519,9 +491,8 @@ CREATE TABLE IF NOT EXISTS `tbombro` (
   `exercicio8` varchar(50) NOT NULL,
   `series8` varchar(10) NOT NULL,
   `repeticoes8` varchar(10) NOT NULL,
-  `observacao` varchar(80) NOT NULL,
-  UNIQUE KEY `login_usuario` (`login_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `observacao` varchar(80) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -529,24 +500,22 @@ CREATE TABLE IF NOT EXISTS `tbombro` (
 -- Estrutura da tabela `tbparceiro`
 --
 
-DROP TABLE IF EXISTS `tbparceiro`;
-CREATE TABLE IF NOT EXISTS `tbparceiro` (
+CREATE TABLE `tbparceiro` (
   `nome` varchar(50) NOT NULL,
-  `login` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `login` varchar(30) NOT NULL,
   `telefone` char(20) NOT NULL,
   `cpf_cnpj` varchar(20) NOT NULL,
   `cidade` varchar(80) NOT NULL,
   `bairro` varchar(80) NOT NULL,
   `rua` varchar(150) NOT NULL,
-  `numero` int NOT NULL,
+  `numero` int(11) NOT NULL,
   `cep` char(18) NOT NULL,
   `email` varchar(50) NOT NULL,
   `tipo` varchar(15) NOT NULL,
-  `plano` int NOT NULL,
-  `senha` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `palavra_chave` varchar(30) NOT NULL,
-  UNIQUE KEY `cpf_cnpj` (`cpf_cnpj`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `plano` int(11) NOT NULL,
+  `senha` varchar(30) NOT NULL,
+  `palavra_chave` varchar(30) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbparceiro`
@@ -563,8 +532,7 @@ INSERT INTO `tbparceiro` (`nome`, `login`, `telefone`, `cpf_cnpj`, `cidade`, `ba
 -- Estrutura da tabela `tbpeito`
 --
 
-DROP TABLE IF EXISTS `tbpeito`;
-CREATE TABLE IF NOT EXISTS `tbpeito` (
+CREATE TABLE `tbpeito` (
   `login_usuario` varchar(50) NOT NULL,
   `nome_personal` varchar(50) NOT NULL,
   `telefone_personal` varchar(30) NOT NULL,
@@ -593,9 +561,8 @@ CREATE TABLE IF NOT EXISTS `tbpeito` (
   `exercicio8` varchar(50) NOT NULL,
   `series8` varchar(10) NOT NULL,
   `repeticoes8` varchar(10) NOT NULL,
-  `observacao` varchar(80) NOT NULL,
-  UNIQUE KEY `login_usuario` (`login_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `observacao` varchar(80) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbpeito`
@@ -610,8 +577,7 @@ INSERT INTO `tbpeito` (`login_usuario`, `nome_personal`, `telefone_personal`, `e
 -- Estrutura da tabela `tbperguntasficha`
 --
 
-DROP TABLE IF EXISTS `tbperguntasficha`;
-CREATE TABLE IF NOT EXISTS `tbperguntasficha` (
+CREATE TABLE `tbperguntasficha` (
   `login` varchar(45) NOT NULL,
   `cpf` varchar(20) NOT NULL,
   `email` varchar(200) NOT NULL,
@@ -629,9 +595,8 @@ CREATE TABLE IF NOT EXISTS `tbperguntasficha` (
   `tempo` varchar(50) NOT NULL,
   `treinamento` varchar(100) NOT NULL,
   `alergia` varchar(200) NOT NULL,
-  `extra` varchar(500) NOT NULL,
-  UNIQUE KEY `cpf` (`cpf`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `extra` varchar(500) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbperguntasficha`
@@ -646,8 +611,7 @@ INSERT INTO `tbperguntasficha` (`login`, `cpf`, `email`, `numero`, `data`, `sexo
 -- Estrutura da tabela `tbperna`
 --
 
-DROP TABLE IF EXISTS `tbperna`;
-CREATE TABLE IF NOT EXISTS `tbperna` (
+CREATE TABLE `tbperna` (
   `login_usuario` varchar(50) NOT NULL,
   `nome_personal` varchar(50) NOT NULL,
   `telefone_personal` varchar(30) NOT NULL,
@@ -676,9 +640,8 @@ CREATE TABLE IF NOT EXISTS `tbperna` (
   `exercicio8` varchar(50) NOT NULL,
   `series8` varchar(10) NOT NULL,
   `repeticoes8` varchar(10) NOT NULL,
-  `observacao` varchar(80) NOT NULL,
-  UNIQUE KEY `login_usuario` (`login_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `observacao` varchar(80) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbperna`
@@ -693,8 +656,7 @@ INSERT INTO `tbperna` (`login_usuario`, `nome_personal`, `telefone_personal`, `e
 -- Estrutura da tabela `tbtrapezio`
 --
 
-DROP TABLE IF EXISTS `tbtrapezio`;
-CREATE TABLE IF NOT EXISTS `tbtrapezio` (
+CREATE TABLE `tbtrapezio` (
   `login_usuario` varchar(50) NOT NULL,
   `nome_personal` varchar(50) NOT NULL,
   `telefone_personal` varchar(30) NOT NULL,
@@ -723,9 +685,8 @@ CREATE TABLE IF NOT EXISTS `tbtrapezio` (
   `exercicio8` varchar(50) NOT NULL,
   `series8` varchar(10) NOT NULL,
   `repeticoes8` varchar(10) NOT NULL,
-  `observacao` varchar(80) NOT NULL,
-  UNIQUE KEY `login_usuario` (`login_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `observacao` varchar(80) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -733,8 +694,7 @@ CREATE TABLE IF NOT EXISTS `tbtrapezio` (
 -- Estrutura da tabela `tbtriceps`
 --
 
-DROP TABLE IF EXISTS `tbtriceps`;
-CREATE TABLE IF NOT EXISTS `tbtriceps` (
+CREATE TABLE `tbtriceps` (
   `login_usuario` varchar(50) NOT NULL,
   `nome_personal` varchar(50) NOT NULL,
   `telefone_personal` varchar(30) NOT NULL,
@@ -763,9 +723,8 @@ CREATE TABLE IF NOT EXISTS `tbtriceps` (
   `exercicio8` varchar(50) NOT NULL,
   `series8` varchar(10) NOT NULL,
   `repeticoes8` varchar(10) NOT NULL,
-  `observacao` varchar(80) NOT NULL,
-  UNIQUE KEY `login_usuario` (`login_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `observacao` varchar(80) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -773,19 +732,17 @@ CREATE TABLE IF NOT EXISTS `tbtriceps` (
 -- Estrutura da tabela `tbusuario`
 --
 
-DROP TABLE IF EXISTS `tbusuario`;
-CREATE TABLE IF NOT EXISTS `tbusuario` (
-  `nome` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `login` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+CREATE TABLE `tbusuario` (
+  `nome` varchar(50) NOT NULL,
+  `login` varchar(30) NOT NULL,
   `cpf` char(12) NOT NULL,
   `email` varchar(50) NOT NULL,
   `numero` char(25) NOT NULL,
   `senha` varchar(30) NOT NULL,
   `palavra_chave` varchar(30) NOT NULL,
-  `plano` int NOT NULL,
-  `nivel` varchar(30) NOT NULL,
-  UNIQUE KEY `cpf` (`cpf`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `plano` int(11) NOT NULL,
+  `nivel` varchar(30) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `tbusuario`
@@ -796,6 +753,184 @@ INSERT INTO `tbusuario` (`nome`, `login`, `cpf`, `email`, `numero`, `senha`, `pa
 ('Usuario 3', 'usu3', '33333333333', 'usuario3@gmail.com', '11900000003', '123', 'usuario3', 3, 'usuario'),
 ('usuario2', 'usu2', '22222222222', 'usuario2@gmail.com', '11900000002', '123', 'usuario2', 2, 'usuario'),
 ('Usuario 1', 'usu1', '11111111111', 'usuario1@gmail.com', '11900000001', '123', 'usuario1', 1, 'usuario');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `eventos`
+--
+ALTER TABLE `eventos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `parceria`
+--
+ALTER TABLE `parceria`
+  ADD PRIMARY KEY (`id_parceria`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Índices para tabela `tbabdomen`
+--
+ALTER TABLE `tbabdomen`
+  ADD UNIQUE KEY `login_usuario` (`login_usuario`);
+
+--
+-- Índices para tabela `tbantebraco`
+--
+ALTER TABLE `tbantebraco`
+  ADD UNIQUE KEY `login_usuario` (`login_usuario`);
+
+--
+-- Índices para tabela `tbbiceps`
+--
+ALTER TABLE `tbbiceps`
+  ADD UNIQUE KEY `login_usuario` (`login_usuario`);
+
+--
+-- Índices para tabela `tbcostas`
+--
+ALTER TABLE `tbcostas`
+  ADD UNIQUE KEY `login_usuario` (`login_usuario`);
+
+--
+-- Índices para tabela `tbequipamento`
+--
+ALTER TABLE `tbequipamento`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `tbficha`
+--
+ALTER TABLE `tbficha`
+  ADD PRIMARY KEY (`id_pd`);
+
+--
+-- Índices para tabela `tbfichaof`
+--
+ALTER TABLE `tbfichaof`
+  ADD PRIMARY KEY (`id_pd`);
+
+--
+-- Índices para tabela `tbfuncionario`
+--
+ALTER TABLE `tbfuncionario`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `login` (`login`);
+
+--
+-- Índices para tabela `tbfundo_acad`
+--
+ALTER TABLE `tbfundo_acad`
+  ADD UNIQUE KEY `login` (`login`);
+
+--
+-- Índices para tabela `tbimagens_acad`
+--
+ALTER TABLE `tbimagens_acad`
+  ADD UNIQUE KEY `login` (`login`);
+
+--
+-- Índices para tabela `tbimagens_acad_funcionario`
+--
+ALTER TABLE `tbimagens_acad_funcionario`
+  ADD UNIQUE KEY `login` (`login`);
+
+--
+-- Índices para tabela `tbimagens_usuario`
+--
+ALTER TABLE `tbimagens_usuario`
+  ADD UNIQUE KEY `login` (`login`);
+
+--
+-- Índices para tabela `tbombro`
+--
+ALTER TABLE `tbombro`
+  ADD UNIQUE KEY `login_usuario` (`login_usuario`);
+
+--
+-- Índices para tabela `tbparceiro`
+--
+ALTER TABLE `tbparceiro`
+  ADD UNIQUE KEY `cpf_cnpj` (`cpf_cnpj`);
+
+--
+-- Índices para tabela `tbpeito`
+--
+ALTER TABLE `tbpeito`
+  ADD UNIQUE KEY `login_usuario` (`login_usuario`);
+
+--
+-- Índices para tabela `tbperguntasficha`
+--
+ALTER TABLE `tbperguntasficha`
+  ADD UNIQUE KEY `cpf` (`cpf`);
+
+--
+-- Índices para tabela `tbperna`
+--
+ALTER TABLE `tbperna`
+  ADD UNIQUE KEY `login_usuario` (`login_usuario`);
+
+--
+-- Índices para tabela `tbtrapezio`
+--
+ALTER TABLE `tbtrapezio`
+  ADD UNIQUE KEY `login_usuario` (`login_usuario`);
+
+--
+-- Índices para tabela `tbtriceps`
+--
+ALTER TABLE `tbtriceps`
+  ADD UNIQUE KEY `login_usuario` (`login_usuario`);
+
+--
+-- Índices para tabela `tbusuario`
+--
+ALTER TABLE `tbusuario`
+  ADD UNIQUE KEY `cpf` (`cpf`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `eventos`
+--
+ALTER TABLE `eventos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT de tabela `parceria`
+--
+ALTER TABLE `parceria`
+  MODIFY `id_parceria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
+-- AUTO_INCREMENT de tabela `tbequipamento`
+--
+ALTER TABLE `tbequipamento`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de tabela `tbficha`
+--
+ALTER TABLE `tbficha`
+  MODIFY `id_pd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT de tabela `tbfichaof`
+--
+ALTER TABLE `tbfichaof`
+  MODIFY `id_pd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT de tabela `tbfuncionario`
+--
+ALTER TABLE `tbfuncionario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
